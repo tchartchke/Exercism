@@ -1,0 +1,3 @@
+def total(basket):
+    
+# basecase: 
