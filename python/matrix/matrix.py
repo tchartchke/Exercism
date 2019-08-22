@@ -9,8 +9,6 @@ class Matrix(object):
 
           mat.append(list(row_ints))
 
-
-
         self.mat = mat
 
     def row(self, index):
