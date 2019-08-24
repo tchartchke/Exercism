@@ -26,3 +26,6 @@ def saddle_points(matrix):
   if not has_points:
     return [{}]
   return points
+
+
+  # two loops. one to fixes r, ones that looks c. keep flags and if met then. yah.

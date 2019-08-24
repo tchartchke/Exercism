@@ -89,3 +89,8 @@ def score(dice, category):
   
   func = switcher.get(category, lambda: "Invalid Game")
   return func
+
+swither[12](dice)
+
+  # set up switcher for category
+  # better to just use if statements

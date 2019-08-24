@@ -4,3 +4,7 @@ def reverse(text):
       rev += text[i]
 
     return rev
+
+
+# for char in the rev (for is likefor each)
+

@@ -11,3 +11,4 @@ def steps(number):
   return 1+steps(3*number+1)
 
 
+# tail recursion -> look up

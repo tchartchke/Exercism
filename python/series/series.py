@@ -12,3 +12,6 @@ def slices(series, length):
     i+=1
 
   return strings
+
+
+  # for loop len(series)-length for range

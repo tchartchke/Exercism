@@ -1,8 +1,7 @@
 class Phone(object):
   def __init__(self, phone_number):
     number = phone_number.translate( { ord(c):None for c in '()-+ \n\t\r' })
-    print(phone_number)
-    print(number)
+
     if not number.isnumeric():
       raise ValueError("Not all numbers")
     if len(number) < 10:
@@ -29,4 +28,8 @@ class Phone(object):
     return '({}) {}-{}'.format(self.area_code, self.exchange, self.subscriber)
       
     
-    
+    # replace on whitespace string.replace(r"\w", "") and paratenteses and = nad +
+
+
+# print str.translate(trantab, 'xm')
+    # [\w_\+\(\)-]

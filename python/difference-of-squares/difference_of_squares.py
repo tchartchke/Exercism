@@ -13,3 +13,6 @@ def sum_of_squares(number):
 
 def difference_of_squares(number):
     return(square_of_sum(number) - sum_of_squares(number))
+
+
+# could do concurrently so loop doesn't run twice if super large number

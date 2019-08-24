@@ -9,3 +9,10 @@ def response(hey_bob):
   if heybob[len(heybob)-1] == '?':
     return "Sure."
   return "Whatever."
+
+
+
+#regex to convert whitespace to null
+# trim = removes all beginning and ending white spaces
+# l and r trimp exists
+# can use negative to get end of string (heybob[-1])

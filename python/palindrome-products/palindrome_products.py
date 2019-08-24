@@ -40,3 +40,25 @@ def smallest(min_factor, max_factor):
 def error(min_factor, max_factor):
   if max_factor < min_factor:
     raise ValueError("invalid min/max value")
+
+
+# ...(..., minormax):
+#   if minormax = max:
+#     cmp_fn = lambda x,y: x<y
+#   else:
+#     cmp_fn = lambda x,y: y<x
+
+#   if cmp_fn(curr_min, new_val):
+#     ...
+
+
+
+# itertools-> products
+# check error -> name
+# in for, changing simple a/i thing won't break
+
+
+#for min , if the larger one 
+
+# only use i > j 
+# second loop can be based on frist loop

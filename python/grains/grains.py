@@ -12,3 +12,5 @@ def total(number):
 def error(number):
   if number <= 0 or number > 64:
     raise ValueError("Invalid square")
+
+# can do sum faster because math a^n
