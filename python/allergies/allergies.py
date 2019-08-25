@@ -8,10 +8,9 @@ class Allergies(object):
       b = b[(len(b)-8):len(b)]
     self.score = '{:08}'.format(int(b))
 
-    self.allergies = self.lst
 
   def allergic_to(self, item):
-    return item in self.allergies
+    return item in self.lst
 
   @property
   def lst(self):
@@ -19,5 +18,8 @@ class Allergies(object):
     for i in range(len(self.score)-1, -1, -1):
       if self.score[i] == '1':
         allergies.append(self.__a[i])
-    self.allergies = allergies
-    return self.allergies
+    # self.allergies = allergies
+    return allergies
+
+
+# reversed

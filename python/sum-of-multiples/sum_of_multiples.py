@@ -11,3 +11,5 @@ def sum_of_multiples(limit, multiples):
       m += 1
 
   return sum(factors)
+
+  # try using for loop :D

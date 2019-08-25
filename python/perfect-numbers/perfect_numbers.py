@@ -24,3 +24,7 @@ def classify(number):
     return "abundant"
 
   return "deficient"
+
+
+# check code or the factors
+#  only have o go up to sqrt(n) (inclusive)
