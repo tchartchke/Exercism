@@ -1,5 +1,8 @@
+import re 
+
 def is_valid(isbn):
-  isbn = isbn.translate( { ord(c):None for c in '- ' })
+  isbn = re.sub(r'[ -]+', '', isbn)
+
   if not isbn[:9].isnumeric():
     return False
     
@@ -20,7 +23,5 @@ def is_valid(isbn):
 
   return False
 
-
-  # error checking all at the beginning
-
+  # error checking should be done at the beginning
   # for complex forumlas, could simplify equation processing by using variables

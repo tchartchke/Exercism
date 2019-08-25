@@ -1,6 +1,8 @@
+import re
+
 class Phone(object):
   def __init__(self, phone_number):
-    number = phone_number.translate( { ord(c):None for c in '()-+ \n\t\r' })
+    number = re.sub(r'[-\s+.\(\)]+', r'', phone_number)
 
     if not number.isnumeric():
       raise ValueError("Not all numbers")
@@ -26,10 +28,3 @@ class Phone(object):
 
   def pretty(self):
     return '({}) {}-{}'.format(self.area_code, self.exchange, self.subscriber)
-      
-    
-    # replace on whitespace string.replace(r"\w", "") and paratenteses and = nad +
-
-
-# print str.translate(trantab, 'xm')
-    # [\w_\+\(\)-]

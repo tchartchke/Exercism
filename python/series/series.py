@@ -7,11 +7,8 @@ def slices(series, length):
 
   strings = []
   i = 0
-  while i+length <= len(series):
+  
+  for i in range(0, len(series)-length+1):
     strings.append(series[i:i+length])
-    i+=1
 
   return strings
-
-
-  # for loop len(series)-length for range
