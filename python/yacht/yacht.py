@@ -36,40 +36,7 @@ def num(dice, n):
       score += n
   return score
 
-def full(rolls, dice):
-  if len(rolls) == 2:
-    l = rolls.values()
-    if all(elem in l  for elem in [2, 3]):
-      return sum(dice)
-  return 0
- 
-def kind(rolls):
-  m = max(rolls, key=lambda key: rolls[key])
-  if rolls[m] > 3:
-    return m*4
-  return 0
- 
-def l_straight(dice):
-  if all(elem in dice  for elem in [1, 2, 3, 4, 5]):
-      return 30
-  return 0
- 
-def b_straight(dice):
-  if all(elem in dice  for elem in [2, 3, 4, 5, 6]):
-      return 30
-  return 0
- 
-def choice(dice):
-  return sum(dice)
- 
-def yacht(dice):
-  if dice.count(dice[0]) == 5:
-      return 50
-  return 0
-
-
-def score(dice, category):
-  # map ==> roll : count 
+def full(dice, n):
   rolls = {}
   for d in dice:
     if d in rolls:
@@ -77,20 +44,54 @@ def score(dice, category):
     else:
       rolls[d] = 1
 
+  if len(rolls) == 2:
+    l = rolls.values()
+    if all(elem in l  for elem in [2, 3]):
+      return sum(dice)
+  return 0
+ 
+def kind(dice, n):
+  rolls = {}
+  for d in dice:
+    if d in rolls:
+      rolls[d] += 1
+    else:
+      rolls[d] = 1
+      
+  m = max(rolls, key=lambda key: rolls[key])
+  if rolls[m] > 3:
+    return m*4
+  return 0
+ 
+def l_straight(dice, n):
+  if all(elem in dice  for elem in [1, 2, 3, 4, 5]):
+      return 30
+  return 0
+ 
+def b_straight(dice, n):
+  if all(elem in dice  for elem in [2, 3, 4, 5, 6]):
+      return 30
+  return 0
+ 
+def choice(dice, n):
+  return sum(dice)
+ 
+def yacht(dice, n):
+  if dice.count(dice[0]) == 5:
+      return 50
+  return 0
+
+
+def score(dice, category):
   switcher = {
-    category: num(dice, category),
-    7: full(rolls, dice),
-    8: kind(rolls),
-    9: l_straight(dice),
-    10: b_straight(dice),
-    11: choice(dice),
-    12: yacht(dice)
+    category: num,
+    7: full,
+    8: kind,
+    9: l_straight,
+    10: b_straight,
+    11: choice,
+    12: yacht
   }
+  return switcher[category](dice, category)
   
-  func = switcher.get(category, lambda: "Invalid Game")
-  return func
-
-swither[12](dice)
-
-  # set up switcher for category
-  # better to just use if statements
+  #in terms of readability, might be better to just use a bunch of if statements
